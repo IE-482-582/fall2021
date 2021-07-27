@@ -22,7 +22,7 @@ These steps were adapted from https://www.pyimagesearch.com/2017/09/22/deep-lear
 
 4. Download the virtual machine for the course.
 	- **The download link is provided to you on UBlearns**
-	- Note:  This is a large file (4.4 GB)...it will take some time to download. 
+	- Note:  This is a large file (several GB)...it will take some time to download. 
 
 5. The file you just downloaded has been "zipped" (compressed).  You'll need to unzip it now.
 
@@ -30,7 +30,7 @@ These steps were adapted from https://www.pyimagesearch.com/2017/09/22/deep-lear
 
 	- Open VirtualBox
 	- Select `File => Import Appliance`
-	- Navigate to where the `ubuntu_1404_vm_F18.ova` file is saved on your computer.
+	- Navigate to where the `ubuntu_2004_vm_F21.ova` file is saved on your computer.
 	- Check the box for "Reinitialize the MAC address of all network cards".
 	- Click "import"
 			
@@ -59,7 +59,7 @@ These steps were adapted from https://www.pyimagesearch.com/2017/09/22/deep-lear
 	- Disable Hyper-V mode from the Windows control panel (if you're using Windows).  See this link for more info:  https://superuser.com/questions/597121/vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system 
 	
 	- Check your BIOS.  You'll need to re-boot your computer.  When it starts to boot, you'll need to use one of the Function keys (e.g., F2, F4, or F12) to enter "Setup".  From there, make sure that Virtualization is **enabled**.  This might be under an "advanced setting".  
-- Please also consult the [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2020/issues/1) thread for other troubleshooting tips.	
+- Please also consult the [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2021/issues/2) thread for other troubleshooting tips.	
 	
 --- 
 

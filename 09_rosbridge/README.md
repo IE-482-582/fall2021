@@ -5,24 +5,19 @@ This document describes how to remotely teleop a simulated turtlebot via a Web i
 --- 
 
 ## Installation
-These instructions assume the use of ROS Indigo on Ubuntu 14.04.  We'll need to install some software that wasn't initially installed on our IE 482/582 Ubuntu image.
+These instructions assume the use of ROS Noetic on Ubuntu 20.04.  We'll need to install some software that wasn't initially installed on our IE 482/582 Ubuntu image.
 
 - Update `apt`:
     ```
     sudo apt-get update
     ```
 
-- Install rosbridge for Indigo:
-    ```
-    cd ~
-    sudo apt-get install ros-indigo-rosbridge-suite
-    ```
     
-- Install Cesium.  This is overkill, and we won't really use Cesium for this application.  However, Cesium ships with a nice utility for running a node.js web server.  Cesium publishes new updates monthly; Version 1.74 is from October, 2020.  See https://cesium.com for more info.
+- Install Cesium.  This is overkill, and we won't really use Cesium for this application.  However, Cesium ships with a nice utility for running a node.js web server.  Cesium publishes new updates monthly; Version 1.83 is from July, 2021.  See https://cesium.com for more info.
     ```
     mkdir ~/cesium
     cd ~/cesium
-    wget https://github.com/CesiumGS/cesium/releases/download/1.74/Cesium-1.74.zip
+    wget https://github.com/CesiumGS/cesium/releases/download/1.83/Cesium-1.83.zip
     unzip Cesium-1.74.zip
     rm Cesium-1.74.zip
     ```
@@ -38,15 +33,15 @@ These instructions assume the use of ROS Indigo on Ubuntu 14.04.  We'll need to 
 - Install `roslibjs`:
     ```
     cd ~/Downloads
-	rm -rf fall2020
-    git clone https://github.com/IE-482-582/fall2020.git
-    cd fall2020/09_rosbridge
+	rm -rf fall2021
+    git clone https://github.com/IE-482-582/fall2021.git
+    cd fall2021/09_rosbridge
     cp -a roslib/. ~/cesium/roslib
     ```
     
 - Copy Web page into Cesium space
     ```
-    cd ~/Downloads/fall2020/09_rosbridge
+    cd ~/Downloads/fall2021/09_rosbridge
     cp -a webbot/. ~/cesium/webbot
     ```
         
@@ -62,7 +57,8 @@ roslaunch rosbridge_server rosbridge_websocket.launch
 
 ### Terminal 2 - Start the turtlebot sim in Gazebo:
 ```
-roslaunch turtlebot_gazebo turtlebot_world.launch
+export TURTLEBOT3_MODEL=burger 
+roslaunch turtlebot3_gazebo turtlebot3_world.launch
 ```
 
 ### Terminal 3 - Start the Web Server:

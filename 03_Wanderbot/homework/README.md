@@ -2,7 +2,7 @@
 
 ---
 
-- This assignment is due on Friday, Oct. 2, at 11:30am.
+- This assignment is due on (**a date and time to be determined**)
 - Email the following three (3) items to me:
     - A markdown file named `README.md` which provides answers to the questions below.
     - Your modified version of `echo_scan.py`, which you used to answer the questions from Part 1 below.

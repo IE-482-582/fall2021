@@ -21,13 +21,13 @@ NOTE: These instructions are a little different from the textbook's.
 3. Get the source code from the course github site:
     ```
     cd ~/Downloads
-    rm -rf fall2020
-    git clone https://github.com/IE-482-582/fall2020.git
+    rm -rf fall2021
+    git clone https://github.com/IE-482-582/fall2021.git
     ```
         
  4. Copy the Python scripts to our wanderbot workspace
     ```
-    cd fall2020/03_Wanderbot/code/wanderbot
+    cd fall2021/03_Wanderbot/code/wanderbot
     cp scripts/* ~/catkin_ws/src/wanderbot/scripts/
     ```
     
@@ -109,17 +109,18 @@ We'll need two (2) terminal windows.
     
 1. Use a *launch* file to start roscore and Gazebo.
     
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+    ```
 
     
 2. Run the range ahead script:
     
-   ```
-   cd ~/catkin_ws/src/wanderbot/scripts
-   rosrun wanderbot range_ahead.py
-   ```
+    ```
+    cd ~/catkin_ws/src/wanderbot/scripts
+    rosrun wanderbot range_ahead.py
+    ```
 
 ### Understanding what's happening
 
@@ -151,14 +152,17 @@ We'll need two (2) terminal windows.
 1.  Use a *launch* file to start roscore and Gazebo.
 
     ```
-    roslaunch turtlebot_gazebo turtlebot_world.launch
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
     ```
+    
+    - NOTE:  The textbook references `roslaunch turtlebot_gazebo turtlebot_world.launch`.  The `turtlebot_gazebo` package has been replaced by `turtlebot3_gazebo`.
 
 2. Run the wander script:
 
     ```
     cd ~/catkin_ws/src/wanderbot/scripts
-    rosrun wanderbot wander.py cmd_vel:=cmd_vel_mux/input/teleop
+    rosrun wanderbot wander.py
     ```
     
 

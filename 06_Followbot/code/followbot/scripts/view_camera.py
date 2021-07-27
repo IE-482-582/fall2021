@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # NOTE:  The textbook calls this script "follower_opencv.py".
 # We've renamed it because this script doesn't actually move the robot.

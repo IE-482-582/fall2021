@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 import math
@@ -55,7 +55,7 @@ def fetch_param(name, default):
 	if rospy.has_param(name):
 		return rospy.get_param(name)
 	else:
-		print "parameter [%s] not defined. Defaulting to %.3f" % (name, default)
+		print("parameter [%s] not defined. Defaulting to %.3f" % (name, default))
 		return default
 
 if __name__ == '__main__':

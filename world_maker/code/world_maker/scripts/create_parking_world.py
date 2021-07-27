@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from parseCSVstring import *
 import math
@@ -10,7 +10,7 @@ USAGE:
 1)  Open sample_parking_lot.xls and edit the x,y coordinates.
 2)  Export the spreadsheet as sample_parking_lot.csv  
 3)  Open a terminal and change directories to where this script (create_parking_world.py) is saved.  Then:
-	python create_parking_world.py
+	python3 create_parking_world.py
 '''
 
 # ----------------------------
@@ -425,6 +425,6 @@ outFile.write(stateClosing)
 
 outFile.close()
 
-print "See 'parking_lot.world'."
+print("See 'parking_lot.world'.")
 
 

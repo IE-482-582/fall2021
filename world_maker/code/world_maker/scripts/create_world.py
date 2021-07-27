@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from parseCSVstring import *
 
@@ -9,7 +9,7 @@ USAGE:
 1)  Open custom_world_coords.xls and edit the x,y coordinates.
 2)  Export the spreadsheet as custom_world_coords.csv  
 3)  Open a terminal and change directories to where this script (create_world.py) is saved.  Then:
-	python create_world.py
+	python3 create_world.py
 '''
 
 class make_coords:
@@ -226,6 +226,6 @@ outFile.write(stateClosing)
 
 outFile.close()
 
-print "The file 'custom_world.world' has been generated."
+print("The file 'custom_world.world' has been generated.")
 
 

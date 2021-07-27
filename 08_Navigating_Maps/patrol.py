@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 
 import rospy
 import actionlib
@@ -32,7 +32,7 @@ if __name__ == '__main__':
 			for pose in waypoints:
 				goal = goal_pose(pose)
 				client.send_goal(goal)
-				print "waiting"
+				print("waiting")
 				client.wait_for_result()
 
 				
