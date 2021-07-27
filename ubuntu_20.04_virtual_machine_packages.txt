@@ -174,3 +174,20 @@ Undo what happened here:
 	student@vm:~/Downloads/fall2021$ 
 
 
+ Committer: Chase Murray <murray@Chases-MBP.fios-router.home>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 32 files changed, 387 insertions(+), 385 deletions(-)
+ rewrite 07_Building_Maps/README.md (98%)
+ rewrite 08_Navigating_Maps/README.md (95%)
+ create mode 100644 ubuntu_20.04_virtual_machine_packages.txt
