@@ -18,13 +18,13 @@
 3. Get the source code from the course github site:
     ```
     cd ~/Downloads
-    rm -rf fall2020
-    git clone https://github.com/IE-482-582/fall2020.git
+    rm -rf fall2021
+    git clone https://github.com/IE-482-582/fall2021.git
     ```
     
  4. Copy the Python scripts to our teleopbot workspace
     ```
-    cd fall2020/05_Teleopbot/code/teleopbot
+    cd fall2021/05_Teleopbot/code/teleopbot
     cp scripts/* ~/catkin_ws/src/teleopbot/scripts/
     ```
     
@@ -49,9 +49,10 @@ We'll first test out our teleoperated robot using some basic keyboard controls.
 
 We'll need three (3) terminal windows:
 1. Launch Gazebo:
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    ```
 	
 2. Run a node to capture our keyboard commands:
    ```
@@ -64,7 +65,7 @@ We'll need three (3) terminal windows:
 3. Run a node to listen for keyboard commands and send to our robot:
    ```
    cd ~/catkin_ws/src/teleopbot/scripts
-   rosrun teleopbot keys_to_twist.py cmd_vel:=cmd_vel_mux/input/teleop
+   rosrun teleopbot keys_to_twist.py
    ```
 	
 We can also open a 4th terminal window to listen for our keyboard commands:
@@ -82,9 +83,10 @@ We will use a modified script that will keep re-issuing the previous move comman
 
 We'll need three (3) terminal windows:
 1. Launch Gazebo:
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    ```
 	
 2. Run a node to capture our keyboard commands:
    ```
@@ -95,10 +97,10 @@ We'll need three (3) terminal windows:
    When you're done, use `Ctrl-z` (I don't think Ctrl-c works).
 	
 3. Run a node to listen for keyboard commands and send to our robot:
-   ```
-   cd ~/catkin_ws/src/teleopbot/scripts
-   rosrun teleopbot keys_to_twist_using_rate.py cmd_vel:=cmd_vel_mux/input/teleop
-   ```
+    ```
+    cd ~/catkin_ws/src/teleopbot/scripts
+    rosrun teleopbot keys_to_twist_using_rate.py
+    ```
 
 ---
 
@@ -110,9 +112,10 @@ Rather than manually editing our script to reduce the speed, we can use ROS's pa
 
 We'll need three (3) terminal windows:
 1. Launch Gazebo:
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    ```
 	
 2. Run a node to capture our keyboard commands:
    ```
@@ -125,12 +128,11 @@ We'll need three (3) terminal windows:
 3. Run a node to listen for keyboard commands and send to our robot:
    ```
    cd ~/catkin_ws/src/teleopbot/scripts
-   rosrun teleopbot keys_to_twist_using_rate_and_params.py _linear_scale:=0.5 _angular_scale:=0.4 cmd_vel:=cmd_vel_mux/input/teleop
+   rosrun teleopbot keys_to_twist_using_rate_and_params.py _linear_scale:=0.5 _angular_scale:=0.4
    ```
 
-Notes:
+Note:
 - The name of this file is different from what the textbook uses.  I edited it to explicitly indicate that it also uses rates.
-- The textbook forgot to include the cmd_vel definition.
 
 ---
 
@@ -143,24 +145,25 @@ A better approach is to ramp up/down the velocities.
 While your robot is running, open another terminal window and let's get some more info:
 ```
 rostopic info cmd_vel
-rostopic info cmd_vel_mux/input/teleop
+rostopic info cmd_vel
 rosmsg show geometry_msgs/Twist
 rostopic echo cmd_vel
-rostopic echo cmd_vel_mux/input/teleop
-rostopic hz cmd_vel_mux/input/teleop
+rostopic echo cmd_vel
+rostopic hz cmd_vel
 ```
 
 Let's check out a plot of our linear and angular velocities:
 ```
-rqt_plot rostopic cmd_vel_mux/input/teleop/linear/x cmd_vel_mux/input/teleop/angular/z 
+rqt_plot rostopic cmd_vel/linear/x cmd_vel/angular/z 
 ```
 
 Now, let's implement velocity ramps.  Again, we'll need 3 terminal windows:
 
 1. Launch Gazebo:
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    ```
 	
 2. Run a node to capture our keyboard commands:
    ```
@@ -173,12 +176,12 @@ Now, let's implement velocity ramps.  Again, we'll need 3 terminal windows:
 3. Run a node to listen for keyboard commands and send to our robot:
    ```
    cd ~/catkin_ws/src/teleopbot/scripts
-   rosrun teleopbot keys_to_twist_with_ramps.py _linear_scale:=0.5 _angular_scale:=1.0 _linear_accel:=1.0 _angular_accel:=1.0 cmd_vel:=cmd_vel_mux/input/teleop
+   rosrun teleopbot keys_to_twist_with_ramps.py _linear_scale:=0.5 _angular_scale:=1.0 _linear_accel:=1.0 _angular_accel:=1.0 
    ```
 
 Let's check out a plot of our linear and angular velocities:
 ```
-rqt_plot rostopic cmd_vel_mux/input/teleop/linear/x cmd_vel_mux/input/teleop/angular/z 
+rqt_plot rostopic cmd_vel/linear/x cmd_vel/angular/z 
 ```
 
 ---
@@ -241,9 +244,10 @@ Fortunately, the code that can be used for XBox control will also allow you to u
 You will have a homework assignment on this topic.  Details will be provided in class.  In the meantime, here's a summary of what needs to happen.
 
 1.  Start your turtlebot as before:
-   ```
-   roslaunch turtlebot_gazebo turtlebot_world.launch
-   ```
+    ```
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
+    ```
    
 2.  Start a new ROS node that listens for gamepad signals:
 

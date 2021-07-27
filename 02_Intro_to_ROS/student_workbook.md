@@ -14,7 +14,7 @@
 - This document is written in *markdown*.  It's a great language for documentation.  Here's a cheatsheet for you:  https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
 - You will be asked to turn in paper copies of your compiled document.  Please make sure it's neatly formatted.  I suggest using the 
-`remarkable` software package that is already installed on your virtual machine.
+`retext` software package that is already installed on your virtual machine.
 
 ---
 
@@ -72,9 +72,12 @@ Just read this chapter...**DO NOT INSTALL ANYTHING**. Your virtual machine alrea
 
 ## ROS Tutorials
 
+- *In several of the links below, you'll be given options to follow the "catkin" or "rosbuild" materials.*  
+**Select "catkin"**.  
+
 ### 1)  [Navigating the ROS Filesystem](http://wiki.ros.org/ROS/Tutorials/NavigatingTheFilesystem)
 
-This tutorial introduces ROS filesystem concepts, and covers using the roscd, rosls, and rospack commandline tools.
+This tutorial introduces ROS filesystem concepts, and covers using the `roscd`, `rosls`, and `rospack` commandline tools.
 
 - Unanswered Questions:
 	
@@ -115,7 +118,7 @@ This tutorial covers using catkin to create a new package, and rospack to list p
 
 ### 4)  [Understanding ROS Nodes](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
 
-This tutorial introduces ROS graph concepts and discusses the use of roscore, rosnode, and rosrun commandline tools.		
+This tutorial introduces ROS graph concepts and discusses the use of `roscore`, `rosnode`, and `rosrun` commandline tools.		
 
 **IN SECTION 1, DO NOT DO THIS:**
 > ~~$ sudo apt-get install ros-\<distro\>-ros-tutorials~~
@@ -147,7 +150,7 @@ This tutorial introduces ROS topics as well as using the rostopic and rqt_plot c
 
 ### 6)  [Understanding ROS Services and Parameters](http://wiki.ros.org/ROS/Tutorials/UnderstandingServicesParams)
 
-This tutorial introduces ROS services, and parameters as well as using the rosservice and rosparam commandline tools.
+This tutorial introduces ROS services, and parameters as well as using the `rosservice` and `rosparam` commandline tools.
 
 - Unanswered Questions:
 	
@@ -156,7 +159,7 @@ This tutorial introduces ROS services, and parameters as well as using the rosse
 
 ### 7)  [Creating a ROS msg and srv](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv)
 
-This tutorial covers how to create and build msg and srv files as well as the rosmsg, rossrv and roscp commandline tools.
+This tutorial covers how to create and build msg and srv files as well as the `rosmsg`, `rossrv` and `roscp` commandline tools.
 
 - Unanswered Questions:
 	

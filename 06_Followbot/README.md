@@ -18,13 +18,13 @@
 3. Get the source code from the course github site:
     ```
     cd ~/Downloads
-    rm -rf fall2020
-    git clone https://github.com/IE-482-582/fall2020.git
+    rm -rf fall2021
+    git clone https://github.com/IE-482-582/fall2021.git
     ```
     
  4. Copy `package.xml` and the Python scripts to our followbot workspace
     ```
-    cd fall2020/06_Followbot/code/followbot
+    cd fall2021/06_Followbot/code/followbot
     cp package.xml ~/catkin_ws/src/followbot/
     cp scripts/* ~/catkin_ws/src/followbot/scripts/
     ```
@@ -51,10 +51,11 @@ We'll start out by placing our robot in a simulated environment.  Then we'll loo
 1.  Open Gazebo and place the turtlebot in a playground:
     ```	
     cd ~/catkin_ws/src/followbot/scripts
-    roslaunch turtlebot_gazebo turtlebot_world.launch
+    export TURTLEBOT3_MODEL=burger 
+    roslaunch turtlebot3_gazebo turtlebot3_world.launch
     ```
 
-    *NOTE: We are using the default turtlebot_gazebo settings here.  In a moment, we'll customize the environment.*
+    *NOTE: We are using the default turtlebot3_gazebo settings here.  In a moment, we'll customize the environment.*
    		
 2.  Launch our ROS node view the robot's camera feed: 
     ```
@@ -82,6 +83,8 @@ rostopic echo /camera/rgb/image_raw -n 1
 
 In this next example, we're going to place our robot on the ground.  There is a yellow line painted on the ground, but no obstacles.
 
+**This code worked just fine with the previous versions of ROS, but we're going to need to edit it to work with ROS Noetic.**
+
 1.  Open Gazebo and place the turtlebot on the test course:
 
     ```	
@@ -104,6 +107,8 @@ In this next example, we're going to place our robot on the ground.  There is a 
 ## Following a Line
 
 Now, let's make the robot drive around while following the yellow line.
+
+**This code worked just fine with the previous versions of ROS, but we're going to need to edit it to work with ROS Noetic.**
 
 1.  Open Gazebo and place the turtlebot on the test course:
     ```	

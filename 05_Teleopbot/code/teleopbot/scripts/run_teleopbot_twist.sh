@@ -3,9 +3,9 @@
 # https://stackoverflow.com/questions/3512055/avoid-gnome-terminal-close-after-script-execution
 
 MYPKG="teleopbot"
-SCRIPT1="roslaunch turtlebot_gazebo turtlebot_world.launch"
+SCRIPT1="export TURTLEBOT3_MODEL=burger && roslaunch turtlebot3_gazebo turtlebot3_world.launch"
 SCRIPT2="rosrun teleopbot key_publisher.py"
-SCRIPT3="rosrun teleopbot keys_to_twist.py cmd_vel:=cmd_vel_mux/input/teleop"
+SCRIPT3="rosrun teleopbot keys_to_twist.py"
 
 gnome-terminal \
 --tab --title "ROSLAUNCH" --working-directory=${HOME} -e "bash -ic \"export HISTFILE=${HOME}/.bash_history_junk1; $SCRIPT1; history -s $SCRIPT1; exec bash\"" \

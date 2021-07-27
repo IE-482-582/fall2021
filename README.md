@@ -1,8 +1,34 @@
-# IE 482/582 - Fall 2020
+# IE 482/582 - Fall 2021
+
+--- 
+
+- [x] Modules 1-5 should be OK
+- [ ] Module 6:  The launch files need some help
+- [ ] Modules 7 and 8:  These are going to need to be re-written for turtlebot3
+- [x] Module 9: This should be OK
+- [ ] World Maker: The launch files need some help
+
+- [ ] Need to check if the turtlebot3 flavors have:
+    - [ ] laser?
+    - [ ] lidar?
+    - [ ] cams?
+    - [ ] bumpers?
+    - [ ] GPS?
+- [ ] What other robots should we experiment with?
+    - **START HERE:** https://robots.ros.org
+        - https://robots.ros.org/clover/ 
+        
+    - https://ardupilot.org/dev/docs/using-gazebo-simulator-with-sitl.html
+    - https://docs.px4.io/master/en/simulation/gazebo.html 
+    - Fetch?  
+        - http://docs.fetchrobotics.com/gazebo.html 
+        - https://github.com/fetchrobotics/fetch_gazebo 
+        - https://robots.ros.org/fetch/
 
 ---
 
-- [Course Syllabus](IE_482-582_Syllabus_Fall_2020.pdf)
+
+- OLD [Course Syllabus](IE_482-582_Syllabus_Fall_2020.pdf)
 
 --- 
 
@@ -117,7 +143,7 @@
 
 ## Announcements (reverse chronological)
 
-- Before class on Wed, Sept 2:
+- Before class on Tuesday, August 31:
 	1. Register for a Github *student* account:
 	    - Visit https://education.github.com/discount_requests/new
 	    - Create an account **using your UB email address**.  
@@ -125,8 +151,8 @@
 
 	2. Install the Ubuntu Virtual Machine on your laptop:  
         - See [01_PC_Setup](01_PC_Setup/README.md) for details.
-        - Also see [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2020/issues/1) for some troubleshooting tips.
-        - If you're experiencing issues, please post detailed questions to the [issue tracker](https://github.com/IE-482-582/fall2020/issues).  You'll need to sign up for a Github account to post your message.
+        - Also see [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2021/issues/2) for some troubleshooting tips.
+        - If you're experiencing issues, please post detailed questions to the [issue tracker](https://github.com/IE-482-582/fall2021/issues).  You'll need to sign up for a Github account to post your message.
 
 ---      
 

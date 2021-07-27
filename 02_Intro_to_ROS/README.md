@@ -18,13 +18,19 @@ Before **we** review the remainder of this document in class, **you** need to wo
    - ROS is a framework that makes it easy to write software for robots.  It has a large collection of libraries and tools that you don't have to re-create yourself.
    - ROS supports several simulation tools, and can also run on actual robots. 
    - It's not an actual operating system (like Windows, iOS, Linux, Android, or OSX).
-   - It only runs on Linux.  We're using Ubuntu 14.04, which supports ROS Indigo.
+   - It only runs on Linux.  We're using Ubuntu 20.04, which supports ROS Noetic.
+       - In previous semesters, we used Ubuntu 14.04, which supported ROS Indigo.  
+       - Our textbook uses ROS Indigo.
    - ROS has evolved over several versions, which are in alphabetical order.  Some of the recent ones include:
       - Groovy | Hydro | *Indigo* | Jade | Kinetic | Lunar | Melodic | **Noetic**
 
       We are using **Noetic**
    - ROS supports C++, Python, Java, and other programming languages.  We will be using Python in this class.
-   
+   - ROS Noetic is the first ROS version to support Python 3.
+       - The previous versions worked with Python 2.7 (which is now EOL'd)
+   - There is also ROS2 (https://docs.ros.org/en/rolling/).  It uses codenames like "Dashing", "Foxy", and "Galactic".
+       - We will not be using ROS2 in this course.
+       
 - Why are we using ROS in this course?
 
    - One of the goals of this course is for you to gain an appreciation for the types of tasks that can be performed by robots.  To do this, I want you to be able to experiment with robot controllers.  Without ROS, you'd have to write these controllers yourself, which would take forever.  ROS will enable you to steer simulated robots, analyze robot sensor data, coordinate multiple robots, etc. 
@@ -120,11 +126,11 @@ Suppose the talker is a car, and that it is broadcasting its location to a topic
 
 4.  Now it's time to write our `talker` node:
 
-    - Open a text editor.  Geany is a good one.  You might also like Sublime Text, or even gedit.
+    - Open a text editor.  Geany is a good one.  Visual Studio Code is popular.  You might also like Sublime Text, or even gedit.
    
     - Within your text editor type the following Python code:
       ```python
-      #!/usr/bin/env python
+      #!/usr/bin/env python3
       
       # license removed for brevity
       # This code is copied from
@@ -172,7 +178,7 @@ Suppose the talker is a car, and that it is broadcasting its location to a topic
     - Within your text editor type the following Python code:
 
       ```python
-      #!/usr/bin/env python
+      #!/usr/bin/env python3
       
       # license removed for brevity
       # This code is copied from
@@ -379,7 +385,7 @@ Before we get started, here's our plan:
     
     - Within the text editor, type the following Python code:
          ```python
-         #!/usr/bin/env python
+         #!/usr/bin/env python3
          
          # talker2.py
          
@@ -431,7 +437,7 @@ Before we get started, here's our plan:
     
     - Within the text editor, type the following Python code:
       ```python
-      #!/usr/bin/env python
+      #!/usr/bin/env python3
       
       # listener2.py
       
@@ -616,7 +622,7 @@ Before we get started, here's our plan:
     
     - Within the text editor, type the following Python code:
          ```python
-         #!/usr/bin/env python
+         #!/usr/bin/env python3
          
          # client.py
          # rosrun basic_service client.py word1 word2 word3
@@ -630,20 +636,20 @@ Before we get started, here's our plan:
          def myController():
          
             # Wait for the the "word_count" service:
-            print 'Waiting for "word_count" service to become available...'
+            print('Waiting for "word_count" service to become available...')
             rospy.wait_for_service('word_count')
-            print 'DONE'
+            print('DONE')
          
             # Capture the list of words from the command line:
             words = ' '.join(sys.argv[1:])
             
             # Call the service
-            print "Calling the service..."
+            print("Calling the service...")
             call_get_count = rospy.ServiceProxy('word_count', word_count)
             
             myResponse = call_get_count(words)
             
-            print words, '->', myResponse.count
+            print(words, '->', myResponse.count)
             
             
          if __name__ == '__main__':
@@ -661,7 +667,7 @@ Before we get started, here's our plan:
     
     - Within the text editor, type the following Python code:
       ```python
-      #!/usr/bin/env python
+      #!/usr/bin/env python3
       
       # server.py
       # rosrun basic_service server.py
@@ -672,7 +678,7 @@ Before we get started, here's our plan:
       from basic_service.srv import word_count
       
       def count_words(request):
-         print "Received: ", request
+         print("Received: ", request)
          return {'count': len(request.words.split())}
          
       def myServer():	

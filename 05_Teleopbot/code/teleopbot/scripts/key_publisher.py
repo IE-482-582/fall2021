@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys, select, tty, termios
 import rospy
@@ -14,7 +14,7 @@ if __name__ == '__main__':
 	tty.setcbreak(sys.stdin.fileno())
 	# END TERMIOS
 
-	print "Publishing keystrokes. Press Ctrl-Z to exit..."
+	print("Publishing keystrokes. Press Ctrl-Z to exit...")
 
 	while not rospy.is_shutdown():
 		# BEGIN SELECT

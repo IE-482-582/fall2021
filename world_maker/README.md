@@ -5,6 +5,11 @@ There are 3 sections in this document.
 - The second section describes how to create a world/maze with numerous unit cubes and a single turtlebot.
 - The last section describes how to build a parking lot world.
 
+--- 
+
+** NOTE:  The launch files referenced below will not work right now.**
+- We need to make some updates for ROS Noetic.
+
 ---
 
 ## 1) Setup the `world_maker` Package.
@@ -12,13 +17,13 @@ There are 3 sections in this document.
 1. Grab the current github repo
     ```
     cd ~/Downloads
-    rm -rf fall2020
-    git clone https://github.com/IE-482-582/fall2020.git
+    rm -rf fall2021
+    git clone https://github.com/IE-482-582/fall2021.git
     ```	
 
 2. Run the installation script
     ```
-    cd ~/Downloads/fall2020/world_maker
+    cd ~/Downloads/fall2021/world_maker
     chmod +x install_world_maker.sh
     ./install_world_maker.sh
     ```
@@ -53,7 +58,7 @@ These instructions will explain how to generate a maze composed of numerous unit
 3. Run the python script to generate a `.world` file:
 	```
 	cd ~/catkin_ws/src/world_maker/scripts
-	python create_world.py
+	python3 create_world.py
 	```	
     This will create a file named `custom_world.world`.
 	
@@ -108,7 +113,7 @@ There is another set of instructions to create a simulated parking lot.
 3. Run the python script to generate a `.world` file:
     ```
     cd ~/catkin_ws/src/world_maker/scripts
-    python create_parking_world.py
+    python3 create_parking_world.py
     ```	
     This will create a file named `parking_lot.world`.
 

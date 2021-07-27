@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy
 from std_msgs.msg import String
@@ -6,7 +6,7 @@ from geometry_msgs.msg import Twist
 
 def gamepad_callback(msg, twist_pub):
 	# Uncomment the next line to see what's being passed:
-	# print msg
+	# print(msg)
 
 	t = Twist()
 	t.angular.z = msg.angular.z

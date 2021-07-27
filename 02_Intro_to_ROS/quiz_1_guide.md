@@ -186,7 +186,7 @@ You should also be able to answer questions like:
 
 	- VERSION 1
 		```
-		#!/usr/bin/env python
+		#!/usr/bin/env python3
 
 		import rospy
 		from std_msgs.msg import Int32
@@ -204,7 +204,7 @@ You should also be able to answer questions like:
 
 	- VERSION 2
 		```
-		#!/usr/bin/env python
+		#!/usr/bin/env python3
 
 		import rospy
 		from std_msgs.msg import Int32

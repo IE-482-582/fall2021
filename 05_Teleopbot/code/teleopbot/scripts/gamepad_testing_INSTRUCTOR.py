@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
 import rospy
@@ -81,7 +81,7 @@ class runJoystick():
 			
 			# Get count of joysticks
 			joystick_count = pygame.joystick.get_count()
-			print "Number of joysticks: {}".format(joystick_count)
+			print("Number of joysticks: {}".format(joystick_count) )
 
 			# NOTE: If there are multiple joysticks, we are only going to listen 
 			# to the one identified by JOY_ID.
@@ -90,7 +90,7 @@ class runJoystick():
 				joystick = pygame.joystick.Joystick(JOY_ID)
 				joystick.init()
 			
-				print "Joystick ID: {}".format(JOY_ID)
+				print("Joystick ID: {}".format(JOY_ID) )
 				
 				# Get the name from the OS for the controller/joystick
 				name = joystick.get_name()
@@ -116,13 +116,13 @@ class runJoystick():
 				couldConnect = True
 
 		except:
-			print "Error with pygame.init():"
+			print("Error with pygame.init():")
 			e = sys.exc_info()[1]
-			print e
+			print(e)
 			raise
 			
 		if (not couldConnect):
-			print "Could not connect to joystick."
+			print("Could not connect to joystick.")
 			# self.shutdown()
 			rospy.signal_shutdown("Could not connect to joystick.")			
 		
@@ -134,14 +134,14 @@ class runJoystick():
 		
 
 		# Keep this node alive.
-		print "Joystick Node Running..."
+		print("Joystick Node Running...")
 		while not rospy.is_shutdown():	
 
 			# EVENT PROCESSING STEP
 			# Events are created when the user interacts with the joystick.
 			for event in pygame.event.get(): 
 				# Uncomment the next line if you want to see the raw "event":
-				# print event
+				# print(event)
 
 				# We'll assume that we don't have anything to publish.
 				pubTwist = False
@@ -158,7 +158,7 @@ class runJoystick():
 						print("\t Button ID: {}".format(event.button))
 
 				elif event.type == pygame.JOYHATMOTION:
-					# print event.joy	-- Will always be JOY_ID.
+					# print(event.joy)	# Will always be JOY_ID.
 					# value --> (x, y).  
 					# 					up:     (0,  1)
 					# left: (-1, 0)		static: (0,  0)				right: (1, 0)
@@ -177,7 +177,6 @@ class runJoystick():
 							print("\t x = {}, y = {}".format(event.value[0],event.value[1]))
 
 				elif event.type == pygame.JOYAXISMOTION:
-					# print "Axis Motion"
 					# joy: joystick id of the event (will always be JOY_ID)
 					# axis: axis id of the event
 					# value: new position of the axis, -1 (off) to 1 (fully depressed) with 0 the center	
@@ -226,9 +225,9 @@ class runJoystick():
 		try:
 			pygame.quit()
 		except:
-			print "Could not quit pygame."
+			print("Could not quit pygame.")
 			e = sys.exc_info()[1]
-			print e
+			print(e)
 			
 		rospy.sleep(1)
 		
