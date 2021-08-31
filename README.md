@@ -1,43 +1,31 @@
 # IE 482/582 - Fall 2021
 
---- 
-
-- [x] Modules 1-5 should be OK
-- [ ] Module 6:  The launch files need some help
-- [ ] Modules 7 and 8:  These are going to need to be re-written for turtlebot3
-- [x] Module 9: This should be OK
-- [ ] World Maker: The launch files need some help
-
-- [ ] Need to check if the turtlebot3 flavors have:
-    - [ ] laser?
-    - [ ] lidar?
-    - [ ] cams?
-    - [ ] bumpers?
-    - [ ] GPS?
-- [ ] What other robots should we experiment with?
-    - **START HERE:** https://robots.ros.org
-        - https://robots.ros.org/clover/ 
-        
-    - https://ardupilot.org/dev/docs/using-gazebo-simulator-with-sitl.html
-    - https://docs.px4.io/master/en/simulation/gazebo.html 
-    - Fetch?  
-        - http://docs.fetchrobotics.com/gazebo.html 
-        - https://github.com/fetchrobotics/fetch_gazebo 
-        - https://robots.ros.org/fetch/
-
----
-
-
-- OLD [Course Syllabus](IE_482-582_Syllabus_Fall_2020.pdf)
+- [Course Syllabus](IE_482-582_Syllabus_Fall_2021.pdf)
 
 --- 
+
+## Announcements (reverse chronological)
+
+- Before class on Thursday, September 2:
+	1. Register for a Github *student* account:
+	    - Visit https://education.github.com/discount_requests/new
+	    - Create an account **using your UB email address**.  
+	    - Choose "student" and "individual" (if prompted). 
+
+	2. Install the Ubuntu Virtual Machine on your laptop:  
+        - See [01_PC_Setup](01_PC_Setup/README.md) for details.
+        - Also see [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2021/issues/2) for some troubleshooting tips.
+        - If you're experiencing issues, please post detailed questions to the [issue tracker](https://github.com/IE-482-582/fall2021/issues).  You'll need to sign up for a Github account to post your message.
+
+---      
 
 ## ROS History Video Series
 - Check out the 5-part documentary here.  Very interesting!
     - https://www.redhat.com/en/open-source-stories/robots/breaking-the-wheel 
     
+---    
     
-## Class Videos (reverse chronological)
+## 2020 Class Videos (reverse chronological)
 - 2020-12-04 (Friday) - Manipulating the R2's hand/fingers
     - https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=943ec1ef-d34f-40ba-9c37-ac870123e6c2
     
@@ -140,22 +128,6 @@
     - https://ub.webex.com/recordingservice/sites/ub/recording/playback/ad2aade7aa8b42ef9d422d007d33f015
 
 ---
-
-## Announcements (reverse chronological)
-
-- Before class on Tuesday, August 31:
-	1. Register for a Github *student* account:
-	    - Visit https://education.github.com/discount_requests/new
-	    - Create an account **using your UB email address**.  
-	    - Choose "student" and "individual" (if prompted). 
-
-	2. Install the Ubuntu Virtual Machine on your laptop:  
-        - See [01_PC_Setup](01_PC_Setup/README.md) for details.
-        - Also see [Issues Installing the Ubuntu Virtual Machine](https://github.com/IE-482-582/fall2021/issues/2) for some troubleshooting tips.
-        - If you're experiencing issues, please post detailed questions to the [issue tracker](https://github.com/IE-482-582/fall2021/issues).  You'll need to sign up for a Github account to post your message.
-
----      
-
 
 
 
