@@ -10,8 +10,8 @@ import cv2, cv_bridge
 class Follower:
 	def __init__(self):
 		self.bridge = cv_bridge.CvBridge()
-		cv2.namedWindow("window", 1)
-		self.image_sub = rospy.Subscriber('camera/rgb/image_raw', 
+		# cv2.namedWindow("window", 1)
+		self.image_sub = rospy.Subscriber('/camera/rgb/image_raw/', 
 									  Image, self.image_callback)
 	def image_callback(self, msg):
 		image = self.bridge.imgmsg_to_cv2(msg,desired_encoding='bgr8')
@@ -21,3 +21,4 @@ class Follower:
 rospy.init_node('follower')
 follower = Follower()
 rospy.spin()
+

@@ -6,11 +6,13 @@ from sensor_msgs.msg import Image
 class Follower:
 	def __init__(self):
 		self.bridge = cv_bridge.CvBridge()
+		'''
 		cv2.namedWindow("Original", 1)
 		cv2.namedWindow("YellowMask", 1)
 		cv2.namedWindow("WhiteMask", 1)
 		cv2.namedWindow("HSV", 1)
 		cv2.namedWindow("Visor", 1)
+		'''
 		
 		# Open two files for writing:
 		# 1) We'll store data for the entire image (640x480):
@@ -39,8 +41,8 @@ class Follower:
 		self.frameCount += 1
 		
 		# Define the range (rows) for our mask:
-		search_top = 3*h/4
-		search_bot = 3*h/4 + 20
+		search_top = (3*h/4)
+		search_bot = (3*h/4) + 20
 
 		# We're only going to save the 10th frame.
 		# This will give the system a few frames to stabilize.

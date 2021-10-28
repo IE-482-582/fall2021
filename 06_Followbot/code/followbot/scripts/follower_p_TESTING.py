@@ -8,10 +8,10 @@ import math
 class Follower:
 	def __init__(self):
 		self.bridge = cv_bridge.CvBridge()
-		cv2.namedWindow("window", 1)
+		# cv2.namedWindow("window", 1)
 		self.image_sub = rospy.Subscriber('/camera/rgb/image_raw', 
 										  Image, self.image_callback)
-		self.cmd_vel_pub = rospy.Publisher('/cmd_vel_mux/input/teleop',
+		self.cmd_vel_pub = rospy.Publisher('/cmd_vel',
 										   Twist, queue_size=1)
 		self.twist = Twist()
 
@@ -25,8 +25,8 @@ class Follower:
 		
 			
 		h, w, d = image.shape
-		search_top = 3*h/4
-		search_bot = 3*h/4 + 20
+		search_top = int(3*h/4)
+		search_bot = int(3*h/4) + 20
 		mask[0:search_top, 0:w] = 0
 		mask[search_bot:h, 0:w] = 0
 		M = cv2.moments(mask)

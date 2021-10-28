@@ -3,7 +3,7 @@
 # https://stackoverflow.com/questions/3512055/avoid-gnome-terminal-close-after-script-execution
 
 MYPKG="followbot"
-SCRIPT1="roslaunch followbot course.launch"
+SCRIPT1="roslaunch followbot turtlebot3_course.launch"
 SCRIPT2="rosrun followbot view_camera.py"
 
 gnome-terminal \
