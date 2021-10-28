@@ -83,13 +83,11 @@ rostopic echo /camera/rgb/image_raw -n 1
 
 In this next example, we're going to place our robot on the ground.  There is a yellow line painted on the ground, but no obstacles.
 
-**This code worked just fine with the previous versions of ROS, but we're going to need to edit it to work with ROS Noetic.**
-
 1.  Open Gazebo and place the turtlebot on the test course:
 
     ```	
     cd ~/catkin_ws/src/followbot/scripts
-    roslaunch followbot course.launch
+    roslaunch followbot turtlebot3_course.launch
     ```
     
     *NOTE: We are now using a customized .launch file.*	
@@ -108,12 +106,10 @@ In this next example, we're going to place our robot on the ground.  There is a 
 
 Now, let's make the robot drive around while following the yellow line.
 
-**This code worked just fine with the previous versions of ROS, but we're going to need to edit it to work with ROS Noetic.**
-
 1.  Open Gazebo and place the turtlebot on the test course:
     ```	
     cd ~/catkin_ws/src/followbot/scripts
-    roslaunch followbot course.launch
+    roslaunch followbot turtlebot3_course.launch
     ```
 
     *NOTE: We are now using a customized .launch file.*
